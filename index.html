@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        section {
+            background: url(img-2.jpg);
+        }
+
+        #layer {
+            background: url(img-1.jpg);
+            border-left: 2px solid #000;
+        }
+
+        section,
+        #layer {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            background-position: 0 0 ;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div id="layer"></div>
+    </section>
+    <script>
+        var slide = document.getElementById('layer');
+        window.onmousemove = function (e) {
+            var x = e.clientX;
+            slide.style.left = x + 'px';
+        }
+    </script>
+</body>
+
+</html>
